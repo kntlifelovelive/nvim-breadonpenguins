@@ -18,6 +18,21 @@ vim.g.start_time = vim.fn.reltime()
 vim.loader.enable() --  SPEEEEEEEEEEED 
 vim.call('plug#begin')
 
+-- === LSP, CMP, MASON, SNIPPETS ===
+Plug('neovim/nvim-lspconfig')
+Plug('williamboman/mason.nvim')
+Plug('williamboman/mason-lspconfig.nvim')
+
+Plug('hrsh7th/nvim-cmp')
+Plug('hrsh7th/cmp-nvim-lsp')
+Plug('hrsh7th/cmp-buffer')
+Plug('hrsh7th/cmp-path')
+
+Plug('L3MON4D3/LuaSnip')
+Plug('saadparwaiz1/cmp_luasnip')
+Plug('rafamadriz/friendly-snippets')
+
+
 Plug('catppuccin/nvim', { ['as'] = 'catppuccin' }) --colorscheme
 Plug('ellisonleao/gruvbox.nvim', { ['as'] = 'gruvbox' }) --colorscheme 2
 Plug('uZer/pywal16.nvim', { [ 'as' ] = 'pywal16' }) --or, pywal colorscheme
@@ -41,6 +56,13 @@ Plug('emmanueltouzery/decisive.nvim') --view csv files
 Plug('folke/twilight.nvim') --surrounding dim
 
 vim.call('plug#end')
+--===========================
+require("config.options")
+
+-- Plugins Setup
+require("plugins.lsp")
+require("plugins.cmp")
+--==========================
 
 -- move config and plugin config to alternate files
 require("config.theme")

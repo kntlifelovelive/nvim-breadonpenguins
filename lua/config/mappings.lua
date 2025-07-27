@@ -9,6 +9,10 @@ map("", "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+
+--Neovim toggle tree
+map("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+
 -- buffers
 map("n", "<S-l>", ":bnext<CR>")
 map("n", "<S-h>", ":bprevious<CR>")
@@ -96,3 +100,4 @@ map("n", "<leader>nn", function() --toggle relative vs absolute line numbers
 		vim.wo.relativenumber = true
 	end
 end)
+
